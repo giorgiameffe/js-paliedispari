@@ -14,5 +14,9 @@ console.log(uNumber);
 const cpNumber = Math.floor(Math.random()*5) +1;
 console.log(cpNumber);
 
+// vengono sommati il numero dell'utente con il numero del computer
+
+const sumTwoNumbers = uNumber + cpNumber;
+console.log(sumTwoNumbers);
 
 
