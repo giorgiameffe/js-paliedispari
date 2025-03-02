@@ -9,3 +9,10 @@ console.log(chooseEvenOrOdd);
 const uNumber = parseInt(prompt("Scegli un numero da 1 a 5"));
 console.log(uNumber);
 
+// il computer genera un numero randomico da 1 a 5
+
+const cpNumber = Math.floor(Math.random()*5) +1;
+console.log(cpNumber);
+
+
+
