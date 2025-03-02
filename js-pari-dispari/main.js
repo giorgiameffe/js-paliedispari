@@ -19,4 +19,19 @@ console.log(cpNumber);
 const sumTwoNumbers = uNumber + cpNumber;
 console.log(sumTwoNumbers);
 
+// verificare e dichiarare il vincitore
+
+function evenOrOdd (firstNumber, secondNumber) {
+
+    if (firstNumber % 2 === 0 && secondNumber % 2 === 0 || firstNumber % 2 !== 0 && secondNumber % 2 !==0) {
+        
+        return 'Ho vinto, il computer ha perso!';
+    } 
+    
+    return 'Ho perso, ha vinto il computer!';
+    
+}
+
+console.log(evenOrOdd(sumTwoNumbers, uNumber));
+
 
