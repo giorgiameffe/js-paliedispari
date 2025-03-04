@@ -4,34 +4,64 @@
 const chooseEvenOrOdd = prompt("Scegli pari o dispari");
 console.log(chooseEvenOrOdd);
 
-// utente inserisce un numero da 1 a 5 in base alla scelta fatta in precedenza
+// condizione di validità  
 
-const uNumber = parseInt(prompt("Scegli un numero da 1 a 5"));
-console.log(uNumber);
+const isWordValid = chooseEvenOrOdd === 'pari' || chooseEvenOrOdd === 'dispari';
 
-// il computer genera un numero randomico da 1 a 5
 
-const cpNumber = Math.floor(Math.random()*5) +1;
-console.log(cpNumber);
+if (isWordValid) {
+    
+    const uNumber = parseInt(prompt("Scegli un numero da 1 a 5"));
+    console.log(uNumber);
 
-// vengono sommati il numero dell'utente con il numero del computer
+    // condizione di validità
 
-const sumTwoNumbers = uNumber + cpNumber;
-console.log(sumTwoNumbers);
+    const isNumberValid = uNumber >=1 && uNumber <= 5;
 
-// verificare e dichiarare il vincitore
+    if (isNumberValid) {
 
-function evenOrOdd (firstNumber, secondNumber) {
-
-    if (firstNumber % 2 === 0 && secondNumber % 2 === 0 || firstNumber % 2 !== 0 && secondNumber % 2 !==0) {
+        const cpNumber = randomNumber(1,5);
+        console.log(cpNumber);
         
-        return 'Ho vinto, il computer ha perso!';
-    } 
+        function randomNumber (min,max) {
+
+            // generare numero randomico per il computer compreso tra 1 e 5
+            
+            return Math.floor(Math.random()* (max - min + 1) + min);
+        }
+        
+        // vengono sommati il numero dell'utente con il numero del computer
     
-    return 'Ho perso, ha vinto il computer!';
+        const sumTwoNumbers = uNumber + cpNumber;
+        console.log(sumTwoNumbers);
+        
+        function evenOrOdd (firstNumber, secondNumber) {
+
+            // dichiarare il vincitore
+            
+            if (firstNumber % 2 === 0 && secondNumber % 2 === 0 || firstNumber % 2 !== 0 && secondNumber % 2 !==0) {
+            
+            return 'Ho vinto, il computer ha perso!';
+        
+        } 
+        
+        return 'Ho perso, ha vinto il computer!';
     
+        }
+        
+        console.log(evenOrOdd(sumTwoNumbers, uNumber));
+
+    } else {
+
+        console.log ('Il numero deve essere compreso tra 1 e 5!');
+    }
+
+} else {
+
+    console.log('La parola inserita non è valida')
 }
 
-console.log(evenOrOdd(sumTwoNumbers, uNumber));
 
 
+
+// vengono sommati il numero dell'utente con il numero del computer
